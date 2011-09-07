@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  @copyright Copyright (C) 2011 Synap System SARL. Tous droits réservés.
-  @license http://www.gnu.org/licenses/gpl.html GNU General Public License
-  @author Charles-Edouard Coste <cc@synap.fr>
--->
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
@@ -68,15 +63,28 @@
     </property>
     <addaction name="actionExit"/>
    </widget>
+   <widget class="QMenu" name="menuAide">
+    <property name="title">
+     <string>Aide</string>
+    </property>
+    <addaction name="actionA_propos"/>
+   </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuEdition"/>
+   <addaction name="menuAide"/>
   </widget>
   <widget class="QToolBar" name="navigationBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
    <property name="movable">
     <bool>true</bool>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
    <property name="floatable">
     <bool>false</bool>
@@ -85,11 +93,19 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
    <addaction name="actionPrevious"/>
    <addaction name="actionNext"/>
+   <addaction name="actionStop"/>
    <addaction name="actionReload"/>
+   <addaction name="actionAccueil"/>
+   <addaction name="separator"/>
+   <addaction name="actionRechercher"/>
+   <addaction name="actionFavoris"/>
+   <addaction name="actionHistorique"/>
+   <addaction name="separator"/>
+   <addaction name="actionImprimer"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="sizeGripEnabled">
@@ -97,11 +113,14 @@
    </property>
   </widget>
   <widget class="QToolBar" name="urlBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
    <property name="windowTitle">
     <string>toolBar_2</string>
    </property>
    <property name="movable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="floatable">
     <bool>false</bool>
@@ -110,7 +129,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
   </widget>
   <widget class="QToolBar" name="loadingBar">
@@ -195,6 +214,10 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/quit.svg</normaloff>:/icons/quit.svg</iconset>
+   </property>
    <property name="text">
     <string>&amp;Quitter</string>
    </property>
@@ -203,6 +226,71 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionA_propos">
+   <property name="text">
+    <string>A propos</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionAccueil">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/home.svg</normaloff>:/icons/home.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Page d'accueil</string>
+   </property>
+  </action>
+  <action name="actionRechercher">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/find.svg</normaloff>:/icons/find.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Rechercher</string>
+   </property>
+  </action>
+  <action name="actionFavoris">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/bookmarks.svg</normaloff>:/icons/bookmarks.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Favoris</string>
+   </property>
+  </action>
+  <action name="actionHistorique">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/history.svg</normaloff>:/icons/history.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Historique</string>
+   </property>
+  </action>
+  <action name="actionImprimer">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/print.svg</normaloff>:/icons/print.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Imprimer</string>
    </property>
   </action>
  </widget>
