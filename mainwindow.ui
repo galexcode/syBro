@@ -18,8 +18,11 @@
   <property name="mouseTracking">
    <bool>false</bool>
   </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::PreventContextMenu</enum>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Synap Browser</string>
   </property>
   <property name="windowIcon">
    <iconset resource="icons.qrc">
@@ -195,6 +198,10 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/quit.svg</normaloff>:/icons/quit.svg</iconset>
+   </property>
    <property name="text">
     <string>&amp;Quitter</string>
    </property>
@@ -203,6 +210,9 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
    </property>
   </action>
  </widget>
