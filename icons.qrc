@@ -5,5 +5,12 @@
         <file>icons/previous.svg</file>
         <file>icons/stop.svg</file>
         <file>icons/logo.svg</file>
+        <file>icons/bookmarks.svg</file>
+        <file>icons/home.svg</file>
+        <file>icons/quit.svg</file>
+        <file>icons/find.svg</file>
+        <file>icons/help.svg</file>
+        <file>icons/print.svg</file>
+        <file>icons/history.svg</file>
     </qresource>
 </RCC>
